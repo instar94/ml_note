@@ -1,6 +1,4 @@
-# 👋 안녕하세요, Dongmin Bae입니다
-
-🌅 새벽별을 지나 북극성이 되어가는 중  
+# 👋 instar94 
 Splunk Engineer → MLOps / AI Platform Engineer
 
 ---
@@ -8,11 +6,11 @@ Splunk Engineer → MLOps / AI Platform Engineer
 ## 🔧 About Me
 
 - 🛡 **현재**: Splunk 기반 보안 로그 인프라 운영
-  - SHC · 인덱서 클러스터 · CIM 정규화 · ES RBA
+  - SHC · 인덱서 클러스터 · CIM 정규화 · ES
 - 🚀 **전환 중**: MLOps / AI Platform Engineer
   - 보안 로그 × ML × LLM 교차점
 - 🎓 **배경**: 심리학·경영학 → HR → 개발자 → 보안 엔지니어
-- 📍 **위치**: 대한민국
+- 📍 **위치**: 서울
 
 ---
 

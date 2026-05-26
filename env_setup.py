@@ -42,6 +42,8 @@ def _setup_font():
     mpl.rcParams["axes.unicode_minus"] = False
 
 
+# ㅇㄹㄴ
+
 _setup_font()
 
 # ── 헬퍼 함수 ─────────────────────────────────────────────────────────────────
@@ -78,7 +80,9 @@ def _download_kaggle(competition: str, path: str = "./data"):
     print(f"[download_kaggle] '{competition}' 데이터 → {path}")
 
 
-def _git_push(msg: str, user_name: str = "instar94", user_email: str = "stright94@gmail.com"):
+def _git_push(
+    msg: str, user_name: str = "instar94", user_email: str = "stright94@gmail.com"
+):
     """Colab 전용: GITHUB_TOKEN 시크릿으로 git add/commit/push"""
     import re
 

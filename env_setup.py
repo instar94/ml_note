@@ -78,13 +78,17 @@ def _download_kaggle(competition: str, path: str = "./data"):
     print(f"[download_kaggle] '{competition}' 데이터 → {path}")
 
 
-def _git_push(msg: str):
+def _git_push(msg: str, user_name: str = "instar94", user_email: str = "stright94@gmail.com"):
     """Colab 전용: GITHUB_TOKEN 시크릿으로 git add/commit/push"""
     import re
 
     from google.colab import userdata
 
     token = userdata.get("GITHUB_TOKEN")
+
+    # Colab은 git config가 없으므로 매번 설정
+    subprocess.run(["git", "config", "user.name", user_name], check=True)
+    subprocess.run(["git", "config", "user.email", user_email], check=True)
 
     remote_url = subprocess.check_output(
         ["git", "remote", "get-url", "origin"], text=True
@@ -95,6 +99,16 @@ def _git_push(msg: str):
     subprocess.run(["git", "remote", "set-url", "origin", auth_url], check=True)
 
     subprocess.run(["git", "add", "-A"], check=True)
+
+    # 변경 사항이 없으면 커밋 생략
+    status = subprocess.run(
+        ["git", "status", "--porcelain"], capture_output=True, text=True
+    ).stdout.strip()
+    if not status:
+        print("[git_push] 변경 사항 없음 — 푸시 생략")
+        subprocess.run(["git", "remote", "set-url", "origin", remote_url], check=True)
+        return
+
     subprocess.run(["git", "commit", "-m", msg], check=True)
     subprocess.run(["git", "push"], check=True)
 

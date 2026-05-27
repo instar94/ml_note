@@ -42,8 +42,6 @@ def _setup_font():
     mpl.rcParams["axes.unicode_minus"] = False
 
 
-# ㅇㄹㄴ
-
 _setup_font()
 
 # ── 헬퍼 함수 ─────────────────────────────────────────────────────────────────
